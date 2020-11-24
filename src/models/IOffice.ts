@@ -9,4 +9,5 @@ export default interface IOffice {
   maxEmployees: number;
   isConfirmedTerms: boolean;
   expiryDate: Date;
+  isActive: boolean;
 }
