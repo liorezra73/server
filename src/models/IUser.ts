@@ -1,4 +1,4 @@
-import UserType from "../enums/userType";
+import UserType from "../enums/UserType";
 
 export default interface IUser {
   id?:number;

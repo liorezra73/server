@@ -1,5 +1,5 @@
 import IUser from "./IUser";
-import OfficeEmployeeType from "../enums/officeEmployeeType";
+import OfficeEmployeeType from "../enums/OfficeEmployeeType";
 
 export default interface IOfficeEmployee {
   id?: number;
