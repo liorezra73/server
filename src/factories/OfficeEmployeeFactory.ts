@@ -6,14 +6,14 @@ import IUser from "../models/IUser";
 class OfficeEmployeeFactory {
   createOfficeEmployee(
     officeEmployeeSchema: IOfficeEmployeeRequest,
-    officeEmployeeType: OfficeEmployeeType,
     officeUser: IUser
   ): IOfficeEmployee {
     return {
-      firstName: officeEmployeeSchema.firstName,
-      lastName: officeEmployeeSchema.lastName,
+      firstName: officeEmployeeSchema.details.firstName,
+      lastName: officeEmployeeSchema.details.lastName,
       user: officeUser,
-      employeeType: officeEmployeeType,
+      employeeType: officeEmployeeSchema.details
+        .employeeType as OfficeEmployeeType,
     };
   }
 }

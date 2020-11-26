@@ -25,6 +25,8 @@ class OfficeFactory {
       expiryDate: expiryDate,
       isConfirmedTerms: false,
       isActive: true,
+      employeesCount: 1,
+      companiesCount: 0,
     };
   }
 }

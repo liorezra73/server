@@ -31,7 +31,6 @@ class OfficeService {
       } else {
         const officeEmployee: IOfficeEmployee = officeEmployeeFactory.createOfficeEmployee(
           officeSchema.employee,
-          OfficeEmployeeType.Director,
           officeUser
         );
         await officeRepository.createOffice(office, officeEmployee);
