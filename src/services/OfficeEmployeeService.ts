@@ -1,4 +1,7 @@
-import { OfficeEmployeeRequestSchema } from "../validations/officeEmployeeSchema";
+import {
+  OfficeEmployeeRequestSchema,
+  OfficeEmployeeDetailsRequestSchema,
+} from "../validations/officeEmployeeSchema";
 import { ContainerTypes } from "express-joi-validation";
 import IUser from "../models/IUser";
 import userService from "./UserService";
@@ -21,7 +24,45 @@ class OfficeEmployeeService {
 
       await officeEmployeeRepository.createOfficeEmployee(officeEmployee);
     } catch (err) {
-        throw err;
+      throw err;
+    }
+  }
+
+  async editOfficeEmployee(
+    employeeId: number,
+    OfficeEmployeeDetailsSchema: OfficeEmployeeDetailsRequestSchema[ContainerTypes.Body]
+  ): Promise<void> {
+    try {
+      console.log(employeeId);
+      console.log(OfficeEmployeeDetailsSchema);
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async deleteOfficeEmployee(employeeId: string): Promise<void> {
+    try {
+      //convert employeeId to number
+      console.log(employeeId);
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async getOfficeEmployeeById(employeeId: string): Promise<void> { //return IOfficeEmployee
+    try {
+      //convert employeeId to number
+      console.log(employeeId);
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async getOfficeEmployees(): Promise<void> {//return IOfficeEmployee[]
+    try {
+      //convert employeeId to number
+    } catch (err) {
+      throw err;
     }
   }
 }

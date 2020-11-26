@@ -7,5 +7,6 @@ export default interface IOfficeEmployee {
   firstName: string;
   lastName: string;
   employeeType: OfficeEmployeeType;
-  user: IUser;
+  user?: IUser;
+  userId?: number;
 }
