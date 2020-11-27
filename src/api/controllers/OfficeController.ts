@@ -1,6 +1,6 @@
 import { Response, NextFunction } from "express";
 import { ValidatedRequest } from "express-joi-validation";
-import { OfficeFullRequestSchema, OfficeMaxCompaniesRequestSchema } from "../../validations/officeSchema";
+import { OfficeFullRequestSchema, OfficeLimitsRequestSchema } from "../../validations/officeSchema";
 import officeService from "../../services/OfficeService";
 
 class OfficeController {
@@ -16,13 +16,15 @@ class OfficeController {
       next(err);
     }
   }
-  async updateOfficeMaxCompanies(
-    req: ValidatedRequest<OfficeMaxCompaniesRequestSchema>,
+  async updateOfficeLimits(
+    req: ValidatedRequest<OfficeLimitsRequestSchema>,
     res: Response,
     next: NextFunction
   ):Promise<void>{
 try {
-    res.end(`office with id ${req.params.officeId} maxCompanies is now ${req.body}`)
+  console.log(req.body);
+  
+    res.end(`update limits of office with id ${req.params.officeId}`)
     
 } catch (err) {
     next(err)

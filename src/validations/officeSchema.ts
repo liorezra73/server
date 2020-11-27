@@ -22,40 +22,34 @@ export interface OfficeDetailRequestSchema extends ValidatedRequestSchema {
   [ContainerTypes.Body]: IOfficeDetailRequest;
 }
 
-export const officeMaxCompaniesSchema = Joi.number().min(0).required();
+export const officeLimitsSchema: Joi.ObjectSchema<any> = Joi.object({
+  maxCompanies: Joi.number().min(0).required(),
+  maxEmployees: Joi.number().min(1).required(),
+  expiryDate: Joi.number().valid(1, 3, 6, 12).required(),
+}).required();
 
-export interface OfficeMaxCompaniesRequestSchema
-  extends ValidatedRequestSchema {
-  [ContainerTypes.Body]: number;
-}
-
-export const officeMaxEmployeesSchema = Joi.number().min(1).required();
-export interface OfficeMaxEmployeesRequestSchema
-  extends ValidatedRequestSchema {
-  [ContainerTypes.Body]: number;
-}
-
-export const officeExpiryDateSchema = Joi.number()
-  .valid(1, 3, 6, 12)
-  .required();
-export interface OfficeExpiryDateRequestSchema extends ValidatedRequestSchema {
-  [ContainerTypes.Body]: number;
+export interface OfficeLimitsRequestSchema extends ValidatedRequestSchema {
+  [ContainerTypes.Body]: {
+    maxCompanies: number;
+    maxEmployees: number;
+    expiryDate: number;
+  };
 }
 
 export const officeFullSchema: Joi.ObjectSchema<any> = Joi.object({
   details: officeDetailsSchema,
-  maxCompanies: officeMaxCompaniesSchema,
-  maxEmployees: officeMaxEmployeesSchema,
-  expiryDate: officeExpiryDateSchema,
+  limits: officeLimitsSchema,
   employee: officeEmployeeSchema,
 });
 
 export interface OfficeFullRequestSchema extends ValidatedRequestSchema {
   [ContainerTypes.Body]: {
     details: IOfficeDetailRequest;
-    maxCompanies: number;
-    maxEmployees: number;
-    expiryDate: number;
+    limits: {
+      maxCompanies: number;
+      maxEmployees: number;
+      expiryDate: number;
+    };
     employee: IOfficeEmployeeRequest;
   };
 }

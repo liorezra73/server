@@ -10,7 +10,8 @@ class OfficeFactory {
   ): IOffice {
     const expiryDate = new Date();
     const currentMonth: number = expiryDate.getMonth();
-    const newMonth: number = (currentMonth + officeSchema.expiryDate) as number;
+    const newMonth: number = (currentMonth +
+      officeSchema.limits.expiryDate) as number;
     expiryDate.setMonth(newMonth);
     return {
       name: officeSchema.details.name,
@@ -20,8 +21,8 @@ class OfficeFactory {
         number: officeSchema.details.address.number,
       },
       sn: officeSchema.details.sn,
-      maxCompanies: officeSchema.maxCompanies,
-      maxEmployees: officeSchema.maxEmployees,
+      maxCompanies: officeSchema.limits.maxCompanies,
+      maxEmployees: officeSchema.limits.maxEmployees,
       expiryDate: expiryDate,
       isConfirmedTerms: false,
       isActive: true,
