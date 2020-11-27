@@ -26,6 +26,7 @@ export const officeLimitsSchema: Joi.ObjectSchema<any> = Joi.object({
   maxCompanies: Joi.number().min(0).required(),
   maxEmployees: Joi.number().min(1).required(),
   expiryDate: Joi.number().valid(1, 3, 6, 12).required(),
+  isActive: Joi.boolean().required(),
 }).required();
 
 export interface OfficeLimitsRequestSchema extends ValidatedRequestSchema {
@@ -33,6 +34,7 @@ export interface OfficeLimitsRequestSchema extends ValidatedRequestSchema {
     maxCompanies: number;
     maxEmployees: number;
     expiryDate: number;
+    isActive: boolean;
   };
 }
 
@@ -49,6 +51,7 @@ export interface OfficeFullRequestSchema extends ValidatedRequestSchema {
       maxCompanies: number;
       maxEmployees: number;
       expiryDate: number;
+      isActive: boolean;
     };
     employee: IOfficeEmployeeRequest;
   };

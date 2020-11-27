@@ -25,7 +25,7 @@ class OfficeFactory {
       maxEmployees: officeSchema.limits.maxEmployees,
       expiryDate: expiryDate,
       isConfirmedTerms: false,
-      isActive: true,
+      isActive: officeSchema.limits.isActive,
       employeesCount: 1,
       companiesCount: 0,
     };
