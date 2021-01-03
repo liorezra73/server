@@ -1,6 +1,6 @@
 export default interface IItem {
-  id?: number;
-  invoiceIncomeId: number;
+  // id?: number;
+  // invoiceIncomeId?: number;
   catalogNumber: string;
   description: string;
   quantity: number;

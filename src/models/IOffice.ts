@@ -1,15 +1,11 @@
-import IAddress from "./IAddress";
+import IOrganization from "./IOrganization";
 
-export default interface IOffice {
-  id?:number;
-  name: string;
-  address: IAddress;
-  sn: string;
+export default interface IOffice extends IOrganization{
   maxCompanies: number;
   maxEmployees: number;
-  isConfirmedTerms: boolean;
   expiryDate: Date;
-  isActive: boolean;
   employeesCount: number;
   companiesCount: number;
 }
+
+

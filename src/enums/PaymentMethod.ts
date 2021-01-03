@@ -4,7 +4,7 @@ enum PaymentMethod {
   Check,
   BankTransfer,
   BankApplication,
-  WithholdingTax,
+  WithHoldingTax,
   Other,
 }
 

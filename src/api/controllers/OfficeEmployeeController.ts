@@ -27,11 +27,11 @@ class OfficeEmployeeController {
   ): Promise<void> {
     try {
       await officeEmployeeService.editOfficeEmployee(
-        req.params.employeeId,
+        req.params.officeEmployeeId,
         req.body
       );
       res.end(
-        `edit employee ${req.params.employeeId} from office ${req.params.officeId}`
+        `edit employee ${req.params.officeEmployeeId} from office ${req.params.officeId}`
       );
     } catch (err) {
       next(err);
@@ -44,10 +44,10 @@ class OfficeEmployeeController {
     next: NextFunction
   ): Promise<void> {
     try {
-      await officeEmployeeService.deleteOfficeEmployee(req.params.employeeId);
+      await officeEmployeeService.deleteOfficeEmployee(req.params.officeEmployeeId);
 
       res.end(
-        `delete employee ${req.params.employeeId} from office ${req.params.officeId}`
+        `delete employee ${req.params.officeEmployeeId} from office ${req.params.officeId}`
       );
     } catch (err) {
       next(err);
@@ -60,10 +60,10 @@ class OfficeEmployeeController {
     next: NextFunction
   ): Promise<void> {
     try {
-      await officeEmployeeService.getOfficeEmployeeById(req.params.employeeId);
+      await officeEmployeeService.getOfficeEmployeeById(req.params.officeEmployeeId);
 
       res.end(
-        `get employee ${req.params.employeeId} from office ${req.params.officeId}`
+        `get employee ${req.params.officeEmployeeId} from office ${req.params.officeId}`
       );
     } catch (err) {
       next(err);

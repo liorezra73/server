@@ -16,17 +16,17 @@ officeEmployeeRouter.post(
 );
 
 officeEmployeeRouter.put(
-  "/:employeeId",
+  "/:officeEmployeeId",
   validator.body(officeEmployeeDetailsSchema),
   officeEmployeeController.editOfficeEmployee
 );
 officeEmployeeRouter.delete(
-  "/:employeeId",
+  "/:officeEmployeeId",
   officeEmployeeController.deleteOfficeEmployee
 );
 
 officeEmployeeRouter.get(
-    "/:employeeId",
+    "/:officeEmployeeId",
     officeEmployeeController.getOfficeEmployeeById
   );
   officeEmployeeRouter.get(

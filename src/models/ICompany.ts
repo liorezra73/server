@@ -1,12 +1,9 @@
-import IAddress from "./IAddress";
+import CompanyType from "../enums/CompanyType";
+import IOrganization from "./IOrganization";
 
-export default interface ICompany {
-  id?: number;
+export default interface ICompany extends IOrganization {
   officeId: number;
   officeEmployeeId?: number;
-  name: string;
-  companyType: string; //????
-  sn: number;
-  address: IAddress;
+  companyType: CompanyType;
   mainPhone: string;
 }

@@ -15,19 +15,20 @@ officeRouter.post(
   validator.body(officeFullSchema),
   officeController.createOffice
 );
+
 officeRouter.put(
   "/:officeId/limits",
   validator.body(officeLimitsSchema),
   officeController.updateOfficeLimits
 ); //admin only
-// officeRouter.put("/:officeId/details",validator.body(officeDetailsSchema),officeController.updateOfficeMaxCompanies);//both
-//fix max companies
-//add max employees edit
-//add expiryDate edit
-//all above in one api
 
-//delete office api
-//deactive office api?
+officeRouter.put(
+  "/:officeId/details",
+  validator.body(officeDetailsSchema),
+  officeController.updateOfficeDetails
+); //both
 
-//update office details api
+officeRouter.delete("/:officeId", officeController.deleteOffice);
+officeRouter.get("/:officeId", officeController.getOfficeById);
+officeRouter.get("/", officeController.getOffices);
 export default officeRouter;
